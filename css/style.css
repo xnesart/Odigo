@@ -54,10 +54,10 @@ html{
     box-sizing: inherit;
   }
   body {
-      font-family: 'Lato', 'sans-serif', 'Arial';
-      font-size: 16px;
-      font-weight: 400;
-      background-color: white;
+    font-family: 'Lato', 'sans-serif', 'Arial';
+    font-size: 16px;
+    font-weight: 400;
+    background-color: white;
   }
   .wrapper {
       width: 1060px;
@@ -75,24 +75,24 @@ html{
     padding-bottom: 10px;
   }
   .section-title::after{
-      display: block;
-      content: "";
-      width: 253px;
-      height: 2px;
-      background-color: #006DFE;
-      position: absolute;
-      bottom: 0;
-      left: 0;
+    display: block;
+    content: "";
+    width: 253px;
+    height: 2px;
+    background-color: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
   /* HEADER */
 .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      transition: .2s linear;
-      padding-bottom: 20px;
-      z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: .2s linear;
+    padding-bottom: 20px;
+    z-index: 999;
 }
 .header_active {
     background: #102746;

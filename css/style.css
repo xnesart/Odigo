@@ -33,8 +33,8 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote::before, blockquote::after,
+q::before, q::after {
 	content: '';
 	content: none;
 }
@@ -50,7 +50,7 @@ img {
 html{
     box-sizing: border-box;
   }
-  *, *:before, *:after {
+  *, *::before, *::after {
     box-sizing: inherit;
   }
   body {
@@ -85,12 +85,18 @@ html{
       left: 0;
   }
   /* HEADER */
-  .header {
+.header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-  }
+      transition: .2s linear;
+      padding-bottom: 20px;
+      z-index: 999;
+}
+.header_active {
+    background: #102746;
+}
 .header-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -125,6 +131,7 @@ html{
     background: url(../img/intro-bg.jpg) no-repeat center;
     background-size: cover;
     padding-top: 263px;
+    padding-bottom: 233px;
 }
 .intro-title {
     font-weight: 500;
@@ -259,6 +266,9 @@ html{
 /* BENEFITS END */
 
 /* PLACES START */
+.places {
+    margin-bottom: 131px;
+}
 .places-title {
     margin-right: 15px;
 }
@@ -289,9 +299,259 @@ html{
 }
 .places-card-size-lg{
     grid-column: span 3;
+    position: relative;
 }
 .places-card-size-md {
     grid-column: span 2;
 
 }
+.places-card {
+    position: relative;
+    overflow: hidden;
+}
+.places-card::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 99%;
+    background-color: rgba(21, 24, 36, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.places-card-pic {
+    width: 100%;
+    transition: 0.15s all;
+}
+
+
+.places-card-pic-size-lg {
+    height: 354px;
+    object-fit: cover;
+}
+.places-card-pic-size-md {
+    height: 283px;
+    object-fit: cover;
+}
+.places-card:hover .places-card-pic {
+    transform: scale(1.01);
+}
+.places-card-title{
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    position: absolute;
+    bottom: 27px;
+    left: 29px;
+    z-index: 3;
+}
+.places-card-link {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 4;
+}
 /* PLACES END */
+
+/* TOURS START  */
+.tours {
+    margin-bottom: 139px;
+}
+.tour-info {
+    padding-left: 47px;
+}           
+.tours-tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 108px;
+    margin-bottom: 77px;
+}
+.tour-title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    color: #102746;
+    margin-bottom: 85px;
+}
+.tour-desc {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #102746;
+    margin-bottom: 58px;
+    max-width: 519px;
+}
+.tour-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #006DFE;display: inline-block;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    background: url(../img/arrow-ico.svg) 95% center no-repeat;
+    transition: 0.2s all;
+    text-decoration: none;
+    padding-right: 59px;
+}
+.tour-link:hover {
+    background: url(../img/arrow-ico.svg) right center no-repeat;
+}
+
+/* TOURS END */
+
+/* TOP START */
+.top-caption {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+}
+.top-caption::after{
+    content: "";
+    display: block;
+    width: 253px;
+    height: 2px;
+    background-color: #006DFE;
+    margin-top: 7px;
+    margin-bottom: 54px;
+}
+.top-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 57px;
+}
+.top-card {
+    width: 391px;
+    /* height: 494px; */
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+}
+.top-card-pic {
+    position: relative;
+    max-width: 377px;
+    margin-bottom: 45px;
+}
+.top-card-title {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 auto 0 0;
+}
+.top-card-stat {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 22px;
+    background-color: rgba(21, 24, 36, 0.6);
+}
+.top-card-likes {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    padding-right: 20px;
+    background: url(../img/heart.svg) no-repeat right;
+    margin-right: 14px;
+}
+.top-card-comments {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    padding-right: 23px;
+    background: url(../img/comments.svg) no-repeat right;
+}
+
+.top-card-desc {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 31px;
+}
+.top-card-link {
+    width: 118px;
+    background-color: #006DFE;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 11px;
+    padding-left: 19px;
+    padding-right: 19px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: none;
+    margin: auto 0 0 0;
+}
+.top-card-link:hover, .top-card-link:focus, .top-card-link:active {
+    background-color: #4c1bff;
+}
+/* TOP section END */
+
+/* VIDEOS START */
+.videos {
+    width: 100%;
+}
+.videos-wrapper {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.video-item {
+    padding-top: 56.25%;
+}
+.video-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* VIDEOS END */
+
+/* FOOTER START */
+
+.footer {
+    background: #0E1D28;
+    padding: 119px 0;
+}
+.footer-item {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-logo {
+    width: 50%;
+}
+.footer-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+}
+.footer-menu-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}
+.footer-menu-link{
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    transition: 0.25s all;
+}
+.footer-menu-link:hover, .footer-menu-link:focus, .footer-menu-link:active {
+    opacity: 0.75;
+}
+/* FOOTER END */

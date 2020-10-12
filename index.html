@@ -6,7 +6,7 @@
     <title>Odigo</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
     <!-- Header START -->
@@ -21,22 +21,22 @@
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">
+                            <a class="nav-link js-scroll" href="#articles">
                                 Articles
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">
+                            <a class="nav-link js-scroll" href="#locations">
                                 Locations
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">
+                            <a class="nav-link js-scroll" href="#videos">
                                 Videos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">
+                            <a class="nav-link js-scroll" href="#sign-in">
                                 Sign in
                             </a>
                         </li>
@@ -62,7 +62,7 @@
     <!-- Header END -->
     <main class="main">
          <!-- INTRO START -->
-        <section class="intro">
+        <section class="intro" id="sign-in">
             <div class="wrapper">
             <h1 class="intro-title">
                 Discover Amazing places in Japan
@@ -170,7 +170,7 @@
            <!-- PLACES END -->
            
             <!-- TOURS START -->
-            <div class="tours">
+            <div class="tours" id="articles">
                 <div class="wrapper-full">
 
                     <div class="tours-tour tour">
@@ -208,7 +208,7 @@
             <!-- TOURS END -->
 
             <!-- TOP START -->
-            <section class="top">
+            <section class="top" id="locations">
                 <div class="wrapper-full">
                     <div class="top-caption">
                         <h3 class="top-section-title">Today top places to visit</h3>
@@ -367,7 +367,7 @@
 
 
             <!-- VIDEOS START -->
-            <div class="videos">
+            <div class="videos" id="videos">
                 <div class="videos-wrapper">
                     <div class="video-item">
                     <iframe class="video-element" src="https://www.youtube.com/embed/Gb0TQ7VeApY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -470,6 +470,6 @@
         </nav>
     </div>
     </footer>
-    <script src="./js/main.js"></script>
+    <script src="./js/main-es5.min.js"></script>
 </body>
 </html>
